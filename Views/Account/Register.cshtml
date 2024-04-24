@@ -1,0 +1,68 @@
+﻿@model EFCodeFirstApprochExample.ViewModels.RegistrationViewModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Register</h2>
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post))
+{
+    <div class="form-row">
+        <div class="col-md-4"></div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-4">
+            @Html.LabelFor(r => r.UserName)
+            @Html.TextBoxFor(r => r.UserName, new { @class = "form-control", placeholder = "User Name" })
+            @Html.ValidationMessageFor(r => r.UserName)
+        </div>
+        <div class="form-group col-md-4">
+            @Html.LabelFor(r => r.Password)
+            @Html.PasswordFor(r => r.Password, new { @class = "form-control", placeholder = "Password" })
+            @Html.ValidationMessageFor(r => r.Password)
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-4">
+            @Html.LabelFor(r => r.ConfirmPassword)
+            @Html.PasswordFor(r => r.ConfirmPassword, new { @class = "form-control", placeholder = "Confirm Password" })
+            @Html.ValidationMessageFor(r => r.ConfirmPassword)
+        </div>
+        <div class="form-group col-md-4">
+            @Html.LabelFor(r => r.Email)
+            @Html.TextBoxFor(r => r.Email, new { @class = "form-control", placeholder = "Email" })
+            @Html.ValidationMessageFor(r => r.Email)
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-4">
+            @Html.LabelFor(r => r.Mobile)
+            @Html.TextBoxFor(r => r.Mobile, new { @class = "form-control", placeholder = "Phone Number" })
+        </div>
+        <div class="form-group col-md-4">
+            @Html.LabelFor(r => r.DateOfBirth)
+            @Html.TextBoxFor(r => r.DateOfBirth, new {@type="date", @class = "form-control datepicker", placeholder = "Date Of Birth" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-8">
+            @Html.LabelFor(r => r.Address)
+            @Html.TextAreaFor(r => r.Address, new { @class = "form-control", placeholder = "Address" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-4">
+            @Html.LabelFor(r => r.City)
+            @Html.TextBoxFor(r => r.City, new { @class = "form-control", placeholder = "City" })
+        </div>
+
+        <div class="form-group col-md-4">
+            @Html.LabelFor(r => r.Country)
+            @Html.TextBoxFor(r => r.Country, new { @class = "form-control", placeholder = "Country" })
+        </div>
+    </div>
+    @Html.ValidationSummary()
+    <button type="submit" class="btn btn-success">Register</button>
+    <a href="#" class="btn btn-danger">Cancel</a>
+}
+

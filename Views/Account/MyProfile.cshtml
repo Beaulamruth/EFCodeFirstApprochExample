@@ -1,0 +1,40 @@
+﻿@model EFCodeFirstApprochExample.Identity.ApplicationUser
+
+@{
+    ViewBag.Title = "MyProfile";
+}
+
+<h2>My Profile</h2>
+
+<table class="table">
+    <tr>
+        <th class="col-md-4">User Name : </th>
+        <td class="col-md-4">@Model.UserName</td>
+    </tr>
+    <tr>
+        <th class="col-md-4">Email : </th>
+        <td class="col-md-4">@Model.Email</td>
+    </tr>
+    <tr>
+        <th class="col-md-4">Date of Birth : </th>
+        <td class="col-md-4">@Model.Birthday</td>
+    </tr>
+    <tr>
+        <th class="col-md-4">Phone Number : </th>
+        <td class="col-md-4">@Model.PhoneNumber</td>
+    </tr>
+    <tr>
+        <th class="col-md-4">City : </th>
+        <td class="col-md-4">@Model.City</td>
+    </tr>
+    <tr>
+        <th class="col-md-4">Country : </th>
+        <td class="col-md-4">@Model.Country</td>
+    </tr>
+ <tr>
+     <td colspan="2">
+         <a href="/home/index"><< Back</a>
+     </td>
+ </tr>
+</table>
+
